@@ -222,7 +222,7 @@ export function CreateInvoice({
                     selected={selectedDate}
                     onSelect={(date) => setSelectedDate(date || new Date())}
                     mode="single"
-                    fromDate={new Date()}
+                    // fromDate={new Date()}
                   />
                 </PopoverContent>
               </Popover>

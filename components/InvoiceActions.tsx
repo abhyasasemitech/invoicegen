@@ -43,7 +43,7 @@ const InvoiceActions = ({id}:Props) => {
             </DropdownMenuItem>
 
             <DropdownMenuItem asChild>
-                <Link href="">
+            <Link href={`/dashboard/invoices/${id}/paid`}>
                 <CheckCircle className=' size-4 mr-2'/> Mark as Paid
                 </Link>
             </DropdownMenuItem>
