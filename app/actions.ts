@@ -74,21 +74,18 @@ export async function createInvoice(prevState: any, formData: FormData) {
   emailClient.send({
     from: sender,
     to: [{ email: submission.value.clientEmail }],
-    template_uuid: "a71130fc-5850-45cb-8513-e6fc47d2967f",
+    template_uuid: "05893876-db30-42af-9ad1-9b6bea96f8e9",
     template_variables: {
-      clientName: submission.value.clientName,
-      invoiceNumber: submission.value.invoiceNumber,
-      dueDate:new Intl.DateTimeFormat("en-US", {
-        dateStyle: "long",}).format(new Date(submission.value.date)),
-      description: submission.value.invoiceItemDescription,
-      quantity: submission.value.invoiceItemQuantity,
-      unitPrice: submission.value.invoiceItemRate,
-      amount: submission.value.total,
-      totalAmount: formatCurrency({
-        amount: submission.value.total,
-        currency: submission.value.currency as any
-      }),
-      downloadUrl: submission.value.invoiceItemQuantity,
+      invoiceNum: submission.value.invoiceNumber,
+      Date: new Intl.DateTimeFormat("en-US", {
+        dateStyle: "long",
+      }).format(new Date(submission.value.date)),
+      client_name: submission.value.clientName,
+      client_address: submission.value.clientAddress,
+      Description: submission.value.invoiceItemDescription,
+      Quantity: submission.value.invoiceItemQuantity,
+      rate: submission.value.invoiceItemRate,
+      total: submission.value.total,
     },
   });
 
