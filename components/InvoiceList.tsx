@@ -30,7 +30,7 @@ async function getData(userId: string) {
       createdAt: "desc",
     },
   });
-  return data;
+  return data
 }
 
 const InvoiceList = async() => {

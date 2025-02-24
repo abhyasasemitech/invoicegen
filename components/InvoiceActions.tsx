@@ -30,11 +30,11 @@ const InvoiceActions = ({id}:Props) => {
                 </Link>
             </DropdownMenuItem>
 
-            <DropdownMenuItem asChild>
+            {/* <DropdownMenuItem asChild>
                 <Link href="">
                 <Mail className=' size-4 mr-2'/> Remainder Email
                 </Link>
-            </DropdownMenuItem>
+            </DropdownMenuItem> */}
 
             <DropdownMenuItem asChild>
                 <Link href="">
