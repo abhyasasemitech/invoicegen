@@ -62,7 +62,7 @@ import { SubmitButton } from "@/components/SubmitButtons";
                 await MarkAsPaidAction(invoiceId);
               }}
             >
-              <SubmitButton text="Mark ad Paid!" />
+              <SubmitButton text="Mark as Paid!" />
             </form>
           </CardFooter>
         </Card>

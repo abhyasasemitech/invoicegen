@@ -30,7 +30,7 @@ export const invoiceSchema = z.object({
   
     currency: z.string().min(1, "Currency is required"),
   
-    invoiceNumber: z.number().min(1, "Minimum invoice number of 1"),
+    invoiceNumber: z.string().min(1, "Minimum invoice number of 1"),
   
     note: z.string().optional(),
   
