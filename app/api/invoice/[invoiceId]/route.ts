@@ -50,14 +50,14 @@ export async function GET(
 
   // Add blue top bar
   pdf.setFillColor(28, 102, 177); // #1c66b1
-  pdf.rect(0, 0, 210, 15, "F");
+  pdf.rect(0, 0, 210, 10, "F");
 
   // Add red shape
   pdf.setFillColor(227, 37, 37); // #e32525
   pdf.moveTo(115, 0);
   pdf.lineTo(210, 0);
-  pdf.lineTo(210, 15);
-  pdf.lineTo(95, 15);
+  pdf.lineTo(210, 10);
+  pdf.lineTo(95, 10);
   pdf.fill();
   // First, import the required modules at the top
 
@@ -65,12 +65,12 @@ export async function GET(
   const imagePath = path.join(process.cwd(), "public", "abhlogo.png");
   const imageData = fs.readFileSync(imagePath);
   const base64Image = `data:image/png;base64,${imageData.toString("base64")}`;
-  pdf.addImage(base64Image, "PNG", 20, 20, 30, 30);
+  pdf.addImage(base64Image, "PNG", 15, 20, 30, 30);
   // Company Header
   pdf.setFont("helvetica", "bold");
   pdf.setFontSize(20);
   pdf.setTextColor(0, 0, 0);
-  pdf.text("ABHYASA SEMICON TECHNOLOGIES", 120, 30, { align: "center" });
+  pdf.text("ABHYASA SEMICON TECHNOLOGIES", 110, 30, { align: "center" });
 
   // Company Address
   pdf.setFontSize(10);
@@ -81,8 +81,8 @@ export async function GET(
       "Visakhapatnam, Andhra Pradesh, India",
       "Email: abhyasasemitech@gmail.com | Phone: +91-9438062982",
     ],
-    105,
-    40,
+    95,
+    37,
     { align: "center" }
   );
 
@@ -100,7 +100,7 @@ export async function GET(
   pdf.setFont("helvetica", "bold");
   pdf.text("Invoice #:", 20, 65);
   pdf.setFont("helvetica", "normal");
-  pdf.text(data.invoiceName, 45, 65);
+  pdf.text(data.invoiceNumber, 45, 65);
 
   pdf.setFont("helvetica", "bold");
   pdf.text("Billed To:", 20, 80);
