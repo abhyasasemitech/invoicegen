@@ -25,8 +25,6 @@ import { useActionState, useState } from "react";
 import { useForm } from "@conform-to/react";
 import { parseWithZod } from "@conform-to/zod";
 
-
-
 import { Prisma } from "@prisma/client";
 import { invoiceSchema } from "@/app/utils/zodSchemas";
 import { formatCurrency } from "@/app/utils/formatCurrency";
@@ -64,7 +62,12 @@ export function EditInvoice({ data }: iAppProps) {
           <input
             type="hidden"
             name={fields.date.name}
-            value={selectedDate.toISOString()}
+            value={new Date(
+              selectedDate.getFullYear(),
+              selectedDate.getMonth(),
+              selectedDate.getDate(),
+              12, 0, 0  // Set time to noon
+            ).toISOString()}
           />
           <input type="hidden" name="id" value={data.id} />
 

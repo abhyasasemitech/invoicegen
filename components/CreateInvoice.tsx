@@ -65,7 +65,12 @@ export function CreateInvoice({
           <input
             type="hidden"
             name={fields.date.name}
-            value={selectedDate.toISOString()}
+            value={new Date(
+              selectedDate.getFullYear(),
+              selectedDate.getMonth(),
+              selectedDate.getDate(),
+              12, 0, 0  // Set time to noon
+            ).toISOString()}
           />
 
           <input
